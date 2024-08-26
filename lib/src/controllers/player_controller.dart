@@ -49,7 +49,7 @@ class PlayerController extends ChangeNotifier {
   ///
   /// See also:
   /// * [UpdateFrequency]
-  UpdateFrequency updateFrequency = UpdateFrequency.low;
+  // UpdateFrequency updateFrequency = UpdateFrequency.low;
 
   /// A stream to get current state of the player. This stream
   /// will emit event whenever there is change in the playerState.
@@ -120,7 +120,7 @@ class PlayerController extends ChangeNotifier {
     final isPrepared = await AudioWaveformsInterface.instance.preparePlayer(
       path: path,
       key: playerKey,
-      frequency: updateFrequency.value,
+      frequency: 50,
       volume: volume,
     );
     if (isPrepared) {
